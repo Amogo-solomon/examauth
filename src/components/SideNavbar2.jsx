@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FaTachometerAlt, FaFileAlt, FaUserShield, FaUserCircle, FaPowerOff } from 'react-icons/fa';
-import AuthContext from '../context/AuthContext'; //Import the AuthContext
 
-/* const SideNavbar = () => {
+const SideNavbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -11,11 +10,7 @@ import AuthContext from '../context/AuthContext'; //Import the AuthContext
     localStorage.removeItem('userSession');
     // Redirect to login page
     navigate('/');
-  }; */
-
-  const SideNavbar = () => {
-    const { logout } = useContext(AuthContext); // Get the logout function from  AuthContext
-  
+  };
 
   return (
     <div className="bg-gray-800 text-white h-16 px-4 flex flex-row items-center justify-between">
@@ -64,7 +59,7 @@ import AuthContext from '../context/AuthContext'; //Import the AuthContext
         <FaUserCircle className="text-2xl" />
         <button
           className="flex items-center bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300"
-          onClick={logout}
+          onClick={handleLogout}
         >
           <FaPowerOff className="mr-2" />
           Logout
